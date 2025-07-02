@@ -1,0 +1,159 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = EVALUATION
+build_property.RootNamespace = EVALUATION
+build_property.ProjectDir = D:\ITU\S6\Mr Rojo\EVALUATION 2\EVALUATION\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\ITU\S6\Mr Rojo\EVALUATION 2\EVALUATION
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/AjouterPenalite.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcQWpvdXRlclBlbmFsaXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/ClassementCoureurEquipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcQ2xhc3NlbWVudENvdXJldXJFcXVpcGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/ClassementCoureurEtape.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcQ2xhc3NlbWVudENvdXJldXJFdGFwZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/ClassementGeneral.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcQ2xhc3NlbWVudEdlbmVyYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/ClassementGeneralCategorie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcQ2xhc3NlbWVudEdlbmVyYWxDYXRlZ29yaWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/ClassementGeneralEquipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcQ2xhc3NlbWVudEdlbmVyYWxFcXVpcGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/CoureurEtape.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcQ291cmV1ckV0YXBlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/Exception.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcRXhjZXB0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/GenereCategorie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcR2VuZXJlQ2F0ZWdvcmllLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/ImportDonnee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcSW1wb3J0RG9ubmVlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/ImportPoints.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcSW1wb3J0UG9pbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/ListeDesEtapes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcTGlzdGVEZXNFdGFwZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/Pdf.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcUGRmLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/Penalite.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcUGVuYWxpdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/PointChaqueEtape.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcUG9pbnRDaGFxdWVFdGFwZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/TempsEtapeCoureur.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcVGVtcHNFdGFwZUNvdXJldXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Administrateur/TrierCategorie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRldXJcVHJpZXJDYXRlZ29yaWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Connexion/LoginAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ubmV4aW9uXExvZ2luQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Connexion/LoginEquipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ubmV4aW9uXExvZ2luRXF1aXBlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Equipe/ClassementGeneral.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXENsYXNzZW1lbnRHZW5lcmFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Equipe/ClassementGeneralCategorie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXENsYXNzZW1lbnRHZW5lcmFsQ2F0ZWdvcmllLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Equipe/ClassementGeneralEquipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXENsYXNzZW1lbnRHZW5lcmFsRXF1aXBlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Equipe/EquipeCoureur.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXEVxdWlwZUNvdXJldXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Equipe/EtapeCoureur.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXEV0YXBlQ291cmV1ci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Equipe/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Equipe/ListeDesEtapes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXExpc3RlRGVzRXRhcGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Equipe/PointChaqueEtape.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXFBvaW50Q2hhcXVlRXRhcGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Equipe/TableauTemplate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXFRhYmxlYXVUZW1wbGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Equipe/TrierCategorie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXFRyaWVyQ2F0ZWdvcmllLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Shared/_LayoutBackOffice.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRCYWNrT2ZmaWNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Shared/_LayoutConnexion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRDb25uZXhpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/Shared/_LayoutFrontOffice.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRGcm9udE9mZmljZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION 2/EVALUATION/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

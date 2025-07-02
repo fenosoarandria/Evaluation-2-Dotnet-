@@ -1,0 +1,74 @@
+@{
+    Layout = "_LayoutBackOffice";
+}
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Accueil</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Tableau de bord</a></li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="row">
+
+            <!-- Sales Card -->
+            <div class="col-xxl-6 col-md-6">
+              <div class="card info-card sales-card">
+
+                <div class="card-body">
+                  <h5 class="card-title">Nombre d'equipe </span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>@ViewBag.Equipe equipe</h6>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Sales Card -->
+
+            <!-- Revenue Card -->
+            <div class="col-xxl-6 col-md-6">
+              <div class="card info-card revenue-card">
+
+                
+                <div class="card-body">
+                  <h5 class="card-title">Nombre de coureur</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-person "></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>@ViewBag.Coureur coureurs</h6>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+
+           
+           
+            
+            
+          </div>
+        </div><!-- End Left side columns -->
+
+        <!-- Right side columns -->
+        </section>
+  </main><!-- End #main -->

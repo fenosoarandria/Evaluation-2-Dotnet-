@@ -1,0 +1,63 @@
+@{
+    Layout = "_LayoutBackOffice";
+}
+
+<main id="main" class="main">
+    
+    <div class="pagetitle">
+        <h1>Point chaque etape </h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Administrateur" asp-action="Index">Accueil</a></li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> </h5>
+
+                        <!-- Table with stripped rows -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Etape</th>
+                                    <th scope="col">Longueur</th>
+                                    <th scope="col">Nombre de coureur</th>
+                                    <th scope="col">Points</th>
+                                    <th scope="col">Coefficient</th>
+                                    <th scope="col">Point coefficient </th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var kvp in ViewBag.PointChaqueEtape)
+                                {
+                                    <tr>
+                                        <td>@kvp.Etape</td>
+                                        <td>@kvp.Etapes.Longueur km</td>
+                                        <td>@kvp.Etapes.NombreCoureurEquipe</td>
+                                        <td>@kvp.Point pts</td>
+                                        <td>@kvp.Coefficient</td>
+                                        <td>@kvp.PointCoefficient pts</td>
+                                        <td>
+                                            <a type="submit" class="btn btn-outline-primary" asp-action="ClassementCoureurEtape" asp-controller="Administrateur" asp-route-id_etape="@kvp.IdEtape">Detail</a>
+                                        </td>
+                                    </tr>
+                                }
+                                <!-- Ajoutez d'autres lignes statiques si nécessaire -->
+                            </tbody>
+                        </table>
+                        <!-- End Table with stripped rows -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->

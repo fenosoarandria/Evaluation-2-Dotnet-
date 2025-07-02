@@ -1,0 +1,59 @@
+@{
+    Layout = "_LayoutBackOffice";
+}
+<style>
+    
+
+</style>
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Ajouter penalite</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Administrateur" asp-action="Index">Accueil</a></li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="col-md-4">
+                            <form asp-action="AjouterHeurePenalite" asp-controller="Administrateur" method="post">
+                                <br>
+                                <select name="id_etape" class="form-select" required>
+                                    <option value="">Choisir une etape...</option>
+                                    @foreach(var liste in ViewBag.Etape)
+                                    {
+                                        <option value="@liste.Id">@liste.Nom @liste.RangEtape</option>
+                                    }
+                                </select>
+                                <br>
+                                <select name="id_equipe" class="form-select" required>
+                                    <option value="">Choisir une equipe...</option>
+                                    @foreach(var liste in ViewBag.Equipe)
+                                    {
+                                        <option value="@liste.Id">@liste.Nom</option>
+                                    }
+                                </select>
+
+                                <br>
+                                    <div class="col-12">
+                                    <label for="dates_arrive">Arrivée:</label>
+                                        <input type="time" name="temps_penalite" class="form-control" id="adminPassword" required>
+                                    </div>
+                                    <br>
+                                <button type="submit" class="btn btn-outline-primary">Valider</button>
+                            </form>
+                        </div>
+                        <br>
+
+                        <!-- End Table with stripped rows -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main><!-- End #main -->

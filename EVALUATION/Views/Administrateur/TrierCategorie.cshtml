@@ -1,0 +1,159 @@
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@{
+    Layout = "_LayoutBackOffice";
+}
+
+<style>
+
+.pagination {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .custom-pagination-item {
+        margin-right: 5px;
+        animation: fadeIn 0.5s ease; /* Animation pour les éléments de pagination */
+    }
+
+    .custom-pagination-item a {
+        display: block;
+        padding: 10px 15px;
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        text-decoration: none;
+        border-radius: 3px;
+        transition: background-color 0.3s ease;
+    }
+
+    .custom-pagination-item a:hover {
+        background-color: #e9e9e9;
+    }
+
+    .custom-pagination-item.active a {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .custom-pagination-item.disabled a {
+        pointer-events: none;
+        cursor: default;
+        opacity: 0.5;
+    }
+
+    @Html.Raw("@")keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .ex-aequo {
+        background-color: rgb(15, 132, 205)!important;
+    }
+    </style>
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Classement général</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Administrateur" asp-action="Index">Accueil</a></li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        
+                        <br>
+                        <h5>Categorie</h5>
+                        <br>
+                        
+                        <a asp-controller="Administrateur" asp-action="ClassementGeneralCategorie" class="btn btn-outline-primary">
+                            <i class="bi bi-arrow-left"></i> Retour
+                        </a>
+                        <br>
+                        <br>
+
+                        <!-- Table with stripped rows -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Categorie</th>
+                                    <th scope="col">Equipe</th>
+                                    <th scope="col">Points</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var liste in ViewBag.Trie)
+                                {
+                                    <tr>
+                                        <td>@liste.Categories.Nom</td>
+                                        <td>@liste.Equipe</td>
+                                        <td>@liste.Point</td>  
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <div class="pagination-container">
+                            @Html.PagedListPager(
+                                (IPagedList)ViewBag.ClassementGeneral,
+                                page => Url.Action("ClassementGeneral", new { page }),
+                                new PagedListRenderOptions { Display = PagedListDisplayMode.IfNeeded, LiElementClasses = new[] { "custom-pagination-item" }, UlElementClasses = new[] { "pagination", "justify-content-center" } }
+                            )
+                        </div>
+                        <div id="pieChart"></div>
+
+                        <!-- End Table with stripped rows -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main><!-- End #main -->
+<!-- Pie Chart -->
+<script>
+  const data = @Html.Raw(Json.Serialize(ViewBag.Trie));
+  console.log(data)
+document.addEventListener("DOMContentLoaded", () => {
+    new ApexCharts(document.querySelector("#pieChart"), {
+    series:  data.map(({ point }) => point),
+    chart: {
+        height: 350,
+        type: 'pie',
+        toolbar: {
+        show: true
+        }
+    },
+    labels: data.map(({ equipe }) => equipe)
+    }).render();
+});
+    </script>
+    <!-- End Pie Chart -->
+    <script>
+    var tableau = document.querySelector("table");
+
+    var nombreDeLignes = tableau.rows.length;
+
+    var pointsParEquipe = {};
+
+    for (var i = 1; i < nombreDeLignes; i++) {
+        var points = parseInt(tableau.rows[i].cells[2].innerText);
+
+        if (pointsParEquipe[points] !== undefined) {
+            tableau.rows[i].cells[2].classList.add("ex-aequo");
+            if (i > 1) {
+                tableau.rows[i - 1].cells[2].classList.add("ex-aequo");
+            }
+        } else {
+            pointsParEquipe[points] = true;
+        }
+    }
+    </script>

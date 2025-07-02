@@ -1,0 +1,128 @@
+@{
+    Layout = "_LayoutFrontOffice";
+}
+ 
+<style>
+    /* Styles pour les boîtes personnalisées */
+    .custom-checkbox-box {
+        border: 1px solid #ccc; /* Bordure de la boîte */
+        border-radius: 5px; /* Coins arrondis */
+        padding: 15px; /* Espacement à l'intérieur de la boîte */
+        margin-bottom: 20px; /* Espacement entre les boîtes */
+        transition: border-color 0.3s ease; /* Animation pour la bordure */
+        cursor: pointer; /* Curseur pointer pour indiquer la possibilité de clic */
+    }
+
+    .checkbox-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Styles pour les boîtes personnalisées lorsque cochées */
+    .custom-checkbox-box.checked {
+        background-color: #ffcccc; /* Couleur de fond en rouge pour les cases cochées */
+        border-color: #d02525; /* Couleur de bordure en rouge pour les cases cochées */
+    }
+
+    /* Style pour le texte des boîtes */
+    .checkbox-content span {
+        color: #000; /* Couleur du texte */
+        margin-bottom: 8px; /* Espacement entre les éléments de texte */
+    }
+
+    /* Animation pour la bordure lors du survol */
+    .custom-checkbox-box:hover {
+        border-color: #007bff; /* Nouvelle couleur de bordure au survol */
+    }
+
+    /* Styles pour les boîtes désactivées */
+    .custom-checkbox-box.disabled {
+        pointer-events: none; /* Désactive les interactions avec la case à cocher */
+        opacity: 0.5; /* Réduit l'opacité pour indiquer que la case à cocher est désactivée */
+    }
+
+    /* Styles pour les cases cochées désactivées */
+    .custom-checkbox-box.checked.disabled {
+        background-color: #ffaaaa; /* Couleur de fond rouge pour les cases cochées désactivées */
+        border-color: #d02525; /* Couleur de bordure en rouge pour les cases cochées désactivées */
+    }
+</style>
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Affectez des coureurs pour cette étape</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Equipe" asp-action="Index">Accueil</a></li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="etape-card">
+                    <div class="card-body">
+                        <form data-controller="Equipe" data-action="InsererEtapeCoureur" method="POST" id="etapeCoureurForm">
+                            <h5 class="etape-title">@ViewBag.Etape.Nom</h5>
+                            <p class="etape-details">Longueur: @ViewBag.Etape.Longueur km</p>
+                            <p class="etape-details">Nombre de coureurs / equipe: @ViewBag.Etape.NombreCoureurEquipe </p>
+                           
+                            <div class="checkbox-list">
+                                <input type="hidden" name="id_etape" value="@ViewBag.Etape.Id" />
+
+                                
+                                @foreach (var liste in ViewBag.Coureur)
+                                {
+                                    bool isChecked = false; // Initialisez une variable pour indiquer si la case à cocher doit être cochée
+                                    bool isDisabled = false; // Initialisez une variable pour indiquer si la case à cocher doit être désactivée
+
+                                    foreach (var key in ViewBag.EtapeCoureur)
+                                    {
+                                        if (liste.Id == key.IdCoureur)
+                                        {
+                                            isChecked = true; // La case à cocher doit être cochée
+                                            isDisabled = true; // Désactiver la case à cocher
+                                            break; // Sortez de la boucle dès qu'une correspondance est trouvée
+                                        }
+                                    }
+
+                                    <div class="custom-checkbox-box @(isChecked ? "checked" : "") @(isDisabled ? "disabled" : "")">
+                                        <input type="checkbox" id="coureur-@liste.Id" name="id_coureur" value="@liste.Id" class="hidden-checkbox" @(isChecked ? "checked" : "") @(isDisabled ? "disabled" : "")> <!-- Ajoutez l'attribut "checked" si la case à cocher doit être cochée -->
+                                        <label for="coureur-@liste.Id" class="checkbox-label">
+                                            <div class="checkbox-content">
+                                                <span class="coureur-nom">@liste.Nom</span>
+                                                <span class="coureur-numero">Numéro : @liste.NumeroDossard</span>
+                                                <span class="coureur-naissance">Age : @Helpers.CalculateAge(liste.DateDeNaissance) ans</span>
+                                                <span class="coureur-numero">@liste.Genre.Nom</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                }
+                            </div>
+                            @* @if(ViewBag.Etape.NombreCoureurEquipe > ViewBag.NombreCoureur ){ *@
+                                <button type="submit" class="btn btn-outline-primary">Ajouter</button>
+                            @* }                             *@
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main><!-- End #main -->
+
+  <script src="~/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="~/assets/js/formValidation.js"></script>
+<!-- Modale d'erreur -->
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="errorModalLabel">Erreurs de validation</h5>
+      </div>
+      <div class="modal-body">
+        <!-- Les messages d'erreur seront insérés ici -->
+      </div>
+    </div>
+  </div>
+</div>

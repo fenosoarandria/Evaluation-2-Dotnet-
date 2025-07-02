@@ -1,0 +1,147 @@
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@{
+    Layout = "_LayoutBackOffice";
+}
+
+<style>
+
+.pagination {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .custom-pagination-item {
+        margin-right: 5px;
+        animation: fadeIn 0.5s ease; /* Animation pour les éléments de pagination */
+    }
+
+    .custom-pagination-item a {
+        display: block;
+        padding: 10px 15px;
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        text-decoration: none;
+        border-radius: 3px;
+        transition: background-color 0.3s ease;
+    }
+
+    .custom-pagination-item a:hover {
+        background-color: #e9e9e9;
+    }
+
+    .custom-pagination-item.active a {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .custom-pagination-item.disabled a {
+        pointer-events: none;
+        cursor: default;
+        opacity: 0.5;
+    }
+
+    @Html.Raw("@")keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Penalite</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Administrateur" asp-action="Index">Accueil</a></li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="col-md-4">
+                                <br>
+                            <a type="submit" asp-action="AjouterPenalite" asp-controller="Administrateur" class="btn btn-outline-primary">Ajouter penalité</a>
+                        </div>
+                        <br>
+
+                        <!-- Table with stripped rows -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Etape</th>
+                                    <th scope="col">Equipe</th>
+                                    <th scope="col">Temps penalite</th>
+                                    <th scope="col">Supprimer</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var liste in ViewBag.Penalite)
+                                { 
+                                    <tr>
+                                        <td>@liste.Etapes.Nom</td>
+                                        <td>@liste.Equipes.Nom</td>
+                                        <td>@liste.TempsPenalite</td>
+                                        <td>
+                                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#deletePenaltyModal" data-penalty-id="@liste.Id">
+                                            Supprimer
+                                        </button>
+                                        </td>
+                                    </tr>
+                                 } 
+                            </tbody>
+                        </table>
+                        @* <div class="pagination-container">
+                            @Html.PagedListPager(
+                                (IPagedList)ViewBag.ClassementGeneral,
+                                page => Url.Action("ClassementGeneral", new { page }),
+                                new PagedListRenderOptions { Display = PagedListDisplayMode.IfNeeded, LiElementClasses = new[] { "custom-pagination-item" }, UlElementClasses = new[] { "pagination", "justify-content-center" } }
+                            )
+                        </div> *@
+                        <!-- End Table with stripped rows -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main><!-- End #main -->
+<div class="modal fade" id="deletePenaltyModal" tabindex="-1" aria-labelledby="deletePenaltyModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deletePenaltyModalLabel">Confirmation de suppression</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Êtes-vous sûr de vouloir supprimer cette pénalité ?</p>
+        <p id="penaltyDetails"></p> 
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        <a id="deletePenaltyLink" href="#" class="btn btn-danger">Supprimer</a>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+  <script src="~/assets/js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#deletePenaltyModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); // Button that triggered the modal
+    var penaltyId = button.data('penaltyId'); // Extract the penalty ID
+
+    // Set the `href` attribute using the extracted ID
+    $('#deletePenaltyLink').attr('href', '/Administrateur/DeletePenalite/' + penaltyId);
+    console.log(penaltyId)
+  });
+});
+</script>

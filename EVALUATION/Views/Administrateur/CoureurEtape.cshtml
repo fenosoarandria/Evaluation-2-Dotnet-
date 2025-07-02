@@ -1,0 +1,45 @@
+@{
+    Layout = "_LayoutBackOffice";
+}
+<style>
+    
+
+</style>
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Point coureur etape</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Administrateur" asp-action="Index">Accueil</a></li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="col-md-4">
+                            <form asp-action="AjouterHeurePenalite" asp-controller="Administrateur" method="post">
+                                <br>
+                                <select name="id_etape" class="form-select" required>
+                                        <option value="">Choisir une etape...</option>
+                                        @foreach(var etape in ViewBag.Etape)
+                                        {
+                                            <option value="@etape.Id">@etape.Nom</option>
+                                        }
+                                    </select>
+                                <br>
+                                <button type="submit" class="btn btn-outline-primary">Valider</button>
+                            </form>
+                        </div>
+                        <br>
+
+                        <!-- End Table with stripped rows -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main><!-- End #main -->
